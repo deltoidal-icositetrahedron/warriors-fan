@@ -4,6 +4,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;  
+    background-color: #FFC72C;
     color: #1D428A;
 }
 
@@ -13,6 +15,6 @@
 
 .subtitle {
     font-family: "Copperplate", "Copperplate Gothic Light", serif;
-    font-weight: 500; /* medium-ish */
+    font-weight: 500;
     margin-top: -10px;
 }
