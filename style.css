@@ -1,0 +1,18 @@
+.header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #1D428A;
+}
+
+.menu h1 {
+    font-family: "Copperplate", "Copperplate Gothic Light", serif;
+}
+
+.subtitle {
+    font-family: "Copperplate", "Copperplate Gothic Light", serif;
+    font-weight: 500; /* medium-ish */
+    margin-top: -10px;
+}
