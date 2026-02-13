@@ -14,9 +14,21 @@
         </div>
     </div>
 
-    <div class="input-bar">
-        <input type="text" placeholder="Ask anything about the Warriors" />
+    <div class="chat-wrap">
+      <div class="chat" id="chat">
+        <div class="msg bot">
+          <div class="bubble">Loading Python…</div>
+        </div>
+      </div>
     </div>
+
+    <form class="input-bar" id="askForm">
+        <input id="askInput" type="text" placeholder="Ask about the Warriors..." autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+    <script src="main.js"></script>
 
 </body>
 </html>
