@@ -18,25 +18,35 @@ function appendMessage(role, text) {
 }
 
 async function initPyodide() {
-  const pyodide = await loadPyodide({
-    indexURL: "https://cdn.jsdelivr.net/pyodide/v0.25.1/full/"
-  });
-
-  pyodide.runPython(`
-def answer(question: str) -> str:
-    q = (question or "").strip()
-    if not q:
-        return "Type a question first."
-    return f"You asked: {q}"
-`);
-  return pyodide;
-}
+    const pyodide = await loadPyodide({
+      indexURL: "https://cdn.jsdelivr.net/pyodide/v0.25.1/full/"
+    });
+  
+    // Fetch your separate Python file from GitHub Pages and run it
+    const pyCode = await fetch("app.py").then(r => {
+      if (!r.ok) throw new Error("Failed to load app.py (HTTP " + r.status + ")");
+      return r.text();
+    });
+  
+    pyodide.runPython(pyCode);
+  
+    // Optional: sanity check
+    const hasAnswer = pyodide.runPython(`'answer' in globals()`);
+    if (!hasAnswer) throw new Error("processor.py did not define answer(question)");
+  
+    return pyodide;
+  }
 
 window.addEventListener("DOMContentLoaded", async () => {
   const form = document.getElementById("askForm");
   const input = document.getElementById("askInput");
   const sendBtn = document.getElementById("sendBtn");
   const chat = document.getElementById("chat");
+
+  if (!form || !input || !sendBtn || !chat) {
+    console.error({ form, input, sendBtn, chat });
+    throw new Error("Missing required element(s). Check IDs: askForm, askInput, sendBtn, chat.");
+  }
 
   // Replace initial "Loading Python…" bubble with nicer flow
   chat.innerHTML = "";

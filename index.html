@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Warriors Fan</title>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+  <title>Warriors Fan</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 
 <body>
-
-    <div class="header">
-        <div class="menu">
-            <h1>Warriors Fan</h1>
-            <h2 class="subtitle"> Ask anything about the Golden State Warriors! </h2>
-        </div>
+  <div class="header">
+    <div class="menu">
+      <h1>Warriors Fan</h1>
+      <h2 class="subtitle">Ask anything about the Golden State Warriors!</h2>
     </div>
+  </div>
 
-    <div class="chat-wrap">
-      <div class="chat" id="chat">
-        <div class="msg bot">
-          <div class="bubble">Loading Python…</div>
-        </div>
-      </div>
-    </div>
+  <div class="chat-wrap">
+    <div class="chat" id="chat"></div>
+  </div>
 
-    <form class="input-bar" id="askForm">
-        <input id="askInput" type="text" placeholder="Ask about the Warriors..." autocomplete="off" />
-        <button type="submit">Send</button>
-      </form>
-    
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
-    <script src="main.js"></script>
+  <form class="input-bar" id="askForm">
+    <input id="askInput" type="text" placeholder="Ask about the Warriors..." autocomplete="off" />
+    <button type="submit" id="sendBtn" disabled>Send</button>
+  </form>
 
+  <!-- Pyodide -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
