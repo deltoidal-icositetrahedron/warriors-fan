@@ -2,6 +2,6 @@
 import random
 
 def answer(question: str) -> str:
-    words = str.split(' ')
+    words = question.split(' ')
     word = random.choice(words)
     return "something something " + word
