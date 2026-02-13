@@ -11,6 +11,10 @@
     padding: 0;
 }
 
+.body {
+    margin: 0;
+}
+
 .menu h1 {
     font-family: "Copperplate", "Copperplate Gothic Light", serif;
 }
