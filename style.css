@@ -25,3 +25,32 @@
     font-weight: 500;
     margin-top: -10px;
 }
+
+body {
+    margin: 0;
+    padding-bottom: 80px; /* prevents content from hiding behind input */
+}
+
+/* Input bar container */
+.input-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: #ffffff;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+}
+
+/* The text input */
+.input-bar input {
+    width: 80%;
+    max-width: 600px;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+}
