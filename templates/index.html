@@ -4,7 +4,7 @@
   <title>Warriors Fan</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -24,8 +24,6 @@
     <button type="submit" id="sendBtn" disabled>Send</button>
   </form>
 
-  <!-- Pyodide -->
-  <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
-  <script src="main.js"></script>
+  <script src="{{ url_for('static', filename='main.js') }}" defer></script>
 </body>
 </html>
