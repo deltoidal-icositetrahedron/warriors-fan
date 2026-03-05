@@ -102,3 +102,20 @@ form.addEventListener("submit", async (e) => {
     chat.scrollTop = chat.scrollHeight;
   }
 });
+
+async function resetHistory() {
+  try {
+    await fetch("/reset", {
+      method: "POST"
+    });
+  } catch (err) {
+    console.error("Failed to reset history", err);
+  }
+}
+
+window.addEventListener("DOMContentLoaded", async () => {
+  await resetHistory();
+
+  chat.innerHTML = "";
+  appendMessage("bot", "Ask me anything about the Golden State Warriors 👇");
+});
